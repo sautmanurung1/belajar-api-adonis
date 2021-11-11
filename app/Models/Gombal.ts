@@ -1,4 +1,4 @@
-import { DateTime } from 'luxon'
+import { DateTime, NumberingSystem } from 'luxon'
 import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
 
 export default class Gombal extends BaseModel {
@@ -7,7 +7,7 @@ export default class Gombal extends BaseModel {
 
   @column()
   public gombal: string
-  
+
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
 
