@@ -29,7 +29,7 @@ Route.get('/', async () => {
 })
   
 Route.group(() => {
-  Route.get('gombal.json', 'GombalsController.index')
+  Route.get('gombal', 'GombalsController.index')
   Route.get('gombal/:id', 'GombalsController.show')
 }).prefix('/public/api')
 
