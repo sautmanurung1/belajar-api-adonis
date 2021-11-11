@@ -27,3 +27,7 @@ Route.group(() => {
   Route.put('users/:id', 'UsersController.update')
   Route.delete('users/:id', 'UsersController.destroy')
 }).prefix('/api/v1')
+
+Route.group(() => {
+  Route.get('blog', '')
+})
