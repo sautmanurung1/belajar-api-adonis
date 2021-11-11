@@ -23,9 +23,9 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/', async () => {
   return {
     hello: 'Selamat datang di Web Api Saut Manurung',
-    API_Provinsi: 'Silahkan akses api nya pada /provinsi',
-    API_kabupaten: 'Silahkan akses api nya pada /kabupaten',
-    API_kecamatan: 'Silahkan akses api nya pada /kecamatan',
+    API_Provinsi: 'Silahkan akses api nya pada  :/public/api/provinsi',
+    API_kabupaten: 'Silahkan akses api nya pada :/public/api/kabupaten',
+    API_kecamatan: 'Silahkan akses api nya pada :/public/api/kecamatan',
   }
 })
   
