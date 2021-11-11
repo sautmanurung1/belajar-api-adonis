@@ -22,13 +22,14 @@ import Route from '@ioc:Adonis/Core/Route'
 
 Route.get('/', async () => {
   return {
-    hello: 'Selamat datang di Web Api Saut Manurung',
-    API_Gombal: 'Dapat di akses di : /public/api/gombal'
+    Sambutan: 'Selamat datang di Web Api Saut Manurung',
+    API_Gombal: 'Dapat diakses di : /public/api/gombal',
+    API_KataMotivasi : 'Dapat diakses di : Coming Soon'
   }
 })
   
 Route.group(() => {
-  Route.get('gombal', 'GombalsController.index')
+  Route.get('gombal.json', 'GombalsController.index')
   Route.get('gombal/:id', 'GombalsController.show')
 }).prefix('/public/api')
 
@@ -37,3 +38,7 @@ Route.group(() => {
   Route.put('gombal/:id', 'GombalsController.update')
   Route.delete('gombal/:id', 'GombalsController.destroy')
 }).prefix('/api/v1')
+
+Route.group(() => {
+
+}).prefix('/public/api')
