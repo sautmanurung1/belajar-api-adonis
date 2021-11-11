@@ -23,38 +23,17 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/', async () => {
   return {
     hello: 'Selamat datang di Web Api Saut Manurung',
-    API_Provinsi: 'Silahkan akses api nya pada  :/public/api/provinsi',
-    API_kabupaten: 'Silahkan akses api nya pada :/public/api/kabupaten',
-    API_kecamatan: 'Silahkan akses api nya pada :/public/api/kecamatan',
+    API_Gombal: 'Dapat di akses di : /public/api/gombal'
   }
 })
   
 Route.group(() => {
-  Route.post('users', 'UsersController.store')
-  Route.get('users', 'UsersController.index')
-  Route.get('users/:id', 'UsersController.show')
-  Route.put('users/:id', 'UsersController.update')
-  Route.delete('users/:id', 'UsersController.destroy')
-}).prefix('/api/v1')
-
-Route.group(() => {
-  Route.get('provinsi', 'ProvinsisController.index')
-  Route.get('provinsi/:id', 'ProvinsisController.show')
+  Route.get('gombal', 'GombalsController.index')
+  Route.get('gombal/:id', 'GombalsController.show')
 }).prefix('/public/api')
 
 Route.group(() => {
-  Route.post('provinsi', 'ProvinsisController.store')
-  Route.put('provinsi/:id', 'ProvinsisController.update')
-  Route.delete('provinsi/:id', 'ProvinsisController.destroy')
-}).prefix('/api/v1')
-
-Route.group(() => {
-  Route.get('kabupaten', 'KabupatensController.index')
-  Route.get('kabupaten/:id', 'KabupatensController.show')
-}).prefix('/public/api')
-
-Route.group(() => {
-  Route.post('kabupaten', 'KabupatensController.store')
-  Route.put('kabupaten/:id', 'KabupatensController.update')
-  Route.delete('kabupaten/:id', 'KabupatensController.destroy')
+  Route.post('gombal', 'GombalsController.store')
+  Route.put('gombal/:id', 'GombalsController.update')
+  Route.delete('gombal/:id', 'GombalsController.destroy')
 }).prefix('/api/v1')
