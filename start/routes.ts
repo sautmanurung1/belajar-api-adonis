@@ -20,6 +20,15 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
+Route.get('/', async () => {
+  return {
+    hello: 'Selamat datang di Web Api Saut Manurung',
+    API_Provinsi: 'Silahkan akses api nya pada /provinsi',
+    API_kabupaten: 'Silahkan akses api nya pada /kabupaten',
+    API_kecamatan: 'Silahkan akses api nya pada /kecamatan',
+  }
+})
+  
 Route.group(() => {
   Route.post('users', 'UsersController.store')
   Route.get('users', 'UsersController.index')
@@ -29,5 +38,23 @@ Route.group(() => {
 }).prefix('/api/v1')
 
 Route.group(() => {
-  Route.get('blog', '')
-})
+  Route.get('provinsi', 'ProvinsisController.index')
+  Route.get('provinsi/:id', 'ProvinsisController.show')
+}).prefix('/public/api')
+
+Route.group(() => {
+  Route.post('provinsi', 'ProvinsisController.store')
+  Route.put('provinsi/:id', 'ProvinsisController.update')
+  Route.delete('provinsi/:id', 'ProvinsisController.destroy')
+}).prefix('/api/v1')
+
+Route.group(() => {
+  Route.get('kabupaten', 'KabupatensController.index')
+  Route.get('kabupaten/:id', 'KabupatensController.show')
+}).prefix('/public/api')
+
+Route.group(() => {
+  Route.post('kabupaten', 'KabupatensController.store')
+  Route.put('kabupaten/:id', 'KabupatensController.update')
+  Route.delete('kabupaten/:id', 'KabupatensController.destroy')
+}).prefix('/api/v1')
